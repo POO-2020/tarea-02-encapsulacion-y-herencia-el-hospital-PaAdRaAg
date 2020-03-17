@@ -6,15 +6,15 @@ export default class Tiempo{
  * @param {string} periodo 
  */
     constructor(hora, minutos, periodo){
-        this.hora = hora;
-        this.minutos = minutos;
-        this.periodo = periodo;
+        this._hora = hora;
+        this._minutos = minutos;
+        this._periodo = periodo;
     }
     getFormato12(){
-        return(`${this.hora}:${this.minutos} ${this.periodo}`);
+        return(`${this._hora}:${this._minutos} ${this._periodo}`);
     }
     getFormato24(){
-        if(this.periodo === "pm"||this.periodo === "PM"||this.periodo === "Pm"){this.hora = this.hora + 12}
-        return(`${this.hora}:${this.minutos}`);
+        if(this_.periodo === "pm"||this._periodo === "PM"||this._periodo === "Pm"){this._hora = this._hora + 12}
+        return(`${this._hora}:${this._minutos}`);
     }
 }
