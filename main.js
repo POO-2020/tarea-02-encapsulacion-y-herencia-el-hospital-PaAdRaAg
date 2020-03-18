@@ -6,10 +6,23 @@ import Nombre from "./nombre.js";
 import Paciente from "./paciente.js";
 import Tiempo from "./tiempo.js";
 import PacienteAsegurado from "./pacienteAsegurado.js";
+import FechaNacimiento from "../04-encapsulacion/fecha-nacimiento.js";
 
 class Main {
   constructor() {
     this.hospital = new Hospital("Hospital", "De los enfermos");
+  }
+
+  testPacienteAsegurado(){
+    let pacienteAseg = new PacienteAsegurado({
+      nombre: new Nombre("Yolanda", "Solorio", "Reyes"),
+      fecha: new Fecha(29, 2, 2019),
+      telefono: 3123125648,
+      numeroPoliza: 20187568,
+      finVigencia: new Fecha(9, 7, 2021),
+      compañia: "Casrx."
+    });
+    console.log(pacienteAseg.getPerfil());
   }
 
   agregarDoctor() {
@@ -35,5 +48,6 @@ class Main {
 }
 
 let app = new Main();
-app.agregarDoctor();
-app.agregarCita();
+/*app.agregarDoctor();
+app.agregarCita();*/
+app.testPacienteAsegurado();
